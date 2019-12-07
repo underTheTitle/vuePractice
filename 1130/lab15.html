@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=-, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+	<script src="/js/product.js"></script>
+</head>
+<body>
+	<div id="app">
+		<table border='1' cellspacing='0' cellpadding='0'>
+			<caption>상품목록</caption>
+			<thead>
+				<tr>번호</tr>
+				<tr>상품명</tr>
+				<tr>가격</tr>
+			</thead>
+			<tbody v-for="i in 3">
+				<td>{{ i }}</td>
+				<td>{{ items[i-1].name }}</td>
+				<td>{{ items[i-1].price }}</td>
+			</tbody>
+		</table>
+	</div>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				items: items
+			}
+		})
+	</script>
+</body>
+</html>

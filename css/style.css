@@ -1,0 +1,12 @@
+.container {
+	background: lime;
+	margin: 10px;
+	padding: 6px;
+	color: magenta;
+}
+
+button {
+	background-color: khaki;
+	color: aqua;
+	font-size: 2em;
+}

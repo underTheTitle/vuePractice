@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=-, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- <input type="text" v-model="fruits"> -->
+		<input type="checkbox" value="Apple" v-model="fruits">사과
+		<input type="checkbox" value="Banana" v-model="fruits">바나나
+		<input type="checkbox" value="Mango" v-model="fruits">망고
+		<input type="checkbox" value="Lemon" v-model="fruits">레몬
+		<input type="checkbox" value="Peach" v-model="fruits">복숭아
+	</div>
+	<div id="app2">
+		<p>{{ fruits }}</p>
+	</div>
+
+	<script>
+		let model = {
+			fruits: ['사과']
+		}
+		new Vue({
+			el: '#app',
+			data: model
+		})
+		new Vue({
+			el: '#app2',
+			data: model
+		})
+	</script>
+</body>
+</html>

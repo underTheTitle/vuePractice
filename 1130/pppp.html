@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=-, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1 v-if="!gender">So you can't decide. Fine!</h1>
+		<h1 v-else>
+			<h1 v-if="gender==='male'">Hello, Mister {{ name }}</h1>
+			<h1 v-else>Hello, Miss {{ name }}</h1>
+		</h1>
+		<h5>Enter your gender:</h5>
+		<input type="text" v-model="gender">
+		<h5>Enter your name:</h5>
+		<input type="text" v-model="name">
+	</div>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				gender: '',
+				name: ''
+			}
+		})
+	</script>
+</body>
+</html>

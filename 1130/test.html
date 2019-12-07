@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Outer(greeting) {
+			function Inner(who) {
+				return who + ' ' + greeting;
+			}
+			return Inner;
+		}
+
+		var result = Outer("Good Morning");
+		var aaa = Outer('Good Bydy');
+		//console.log(typeof result);
+		console.log(result('한지민'));
+		console.log(aaa('김철수'));
+
+		// 뭐라는겨ㅓ
+
+	</script>
+</body>
+</html>
