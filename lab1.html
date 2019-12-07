@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=-, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h3>{{ productName }}</h3>
+		<h4>공급대가 : {{ price | numberWithDelimeter}}</h4>
+		<input type="text" v-model="price">
+		<h4>공급가 : {{ supplyAmount.toFixed() | numberWithDelimeter}}</h4>
+		<h4>부가가치세 : {{ valueAddedTax.toFixed() | numberWithDelimeter}}</h4>
+	</div>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				name: 'MacBook Pro Notebook',
+				price: 360000
+			},
+			filters: {
+				numberWithDelimeter: function(value) {
+					if (!value) return '0';
+					return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+				}
+			},
+			computed: {
+				productName: function() {
+					return this.name.toUpperCase();
+				},
+				supplyAmount: function() {
+					return (this.price / 11) * 10;
+				},
+				valueAddedTax: function() {
+					return (this.price / 11);
+				}
+			}
+		})
+	</script>
+</body>
+</html>
