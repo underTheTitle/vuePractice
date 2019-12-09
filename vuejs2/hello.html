@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <!-- 바인딩 표현식 -->
+        <input v-model="message">
+        <!-- v-model(Vue의 디렉티브)
+        양방향 데이터 바인딩을 통해 사용자가 입력 엘리먼트 안의 내용을 변경할 때
+        메시지 값을 동적으로 변경 
+        데이터는 기본적으로 모든 입력 이벤트에 동기화
+        v-model="바인딩할 변수" -->
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script>
+    const data = {
+        message: 'Greetings your majesty!'
+    }
+
+    new Vue({ // 새로운 Vue 인스턴스 작성
+        el: '#app', // Vue를 작동하는 컨테이너 설정
+        data: data
+        // 직접 정의할 수 있음
+        // data: {
+        //     message: 'Greetings your Majesty!'
+        // }
+    })
+</script>
+</html>

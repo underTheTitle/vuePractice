@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greetings user</title>
+</head>
+<body>
+    <div id="app">
+        <template v-if="gender == 'male' || gender == 'female'">
+            <h1 v-if="gender == 'male'">Hello, Mister {{ name }}</h1>
+            <h1 v-else>Hello, Miss {{ name }}</h1>
+        </template>
+        <h1 v-else>So you can't decide. Fine!</h1>
+        Enter your gender:
+        <br>
+        <input type="text" v-model="gender">
+        <br>
+        Enter your name:
+        <br>
+        <input type="text" v-model="name">
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            gender: '',
+            name: ''
+        }
+    })
+</script>
+</html>

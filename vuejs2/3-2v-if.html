@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Vue</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="!message">You must send a message for help!</h1>
+        <textarea v-model="message"></textarea>
+        <button v-if="message">
+            Send word to allies for help!
+        </button>
+        <!-- 
+            v-if가 지정된 엘리먼트는 DOM에 유지되지 않는다(v-show와의 차이점)
+         -->
+        <pre>
+            {{ $data }}
+        </pre>
+        <template v-if="!message">
+            <h1>You must send a message for help!</h1>
+            <p>Dispatch a messenger immediately!</p>
+            <p>To nearby kingdom of Hearts!</p>
+        </template>
+        <!-- 
+            여러 개의 엘리먼트를 한 번에 토글해야 하는 경우 
+            <template> 엘리먼트에서 v-if를 사용
+            div 또는 span을 사용하는 것이 적절하지 않은 경우에도 
+            <template>을 보이지 않는 래퍼로 사용
+
+            v-show 디렉티브는 <template>에서 사용 불가
+         -->
+        <textarea v-model="message"></textarea>
+        <button v-show="message">
+            Send word to allies for help!
+        </button>
+        <pre>
+            {{ $data }}
+        </pre>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Our king is dead! Send help!'
+        }
+    })
+</script>
+</html>
