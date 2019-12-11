@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{ message }}
+	</div>
+
+	<script>
+        /*
+        Vue application은 Vue 함수를 사용하여 새로운 Vue Instance를 만드는 것부터 시작한다.
+        Vue로 화면을 개발하기 위해 필수적으로 생성해야 하는 기본 단위이다.
+        Vue 객체 생성은 new 연산자를 사용한다.
+        이처럼 생성한 Vue 객체는 vue.js프로그램의 최상위 객체로 동작한다.
+        이 객체를 일반적으로 Vue Instance라고 또는 Root Component라고 부른다.
+
+        Bootstrapping : Vue.js는 Vue Template과 Instance의 속성을 Binding하고 DOM Event를
+        Vue Method로 전당하도록 하는 등 Instance를 생성할 때 필요한 작업
+        */
+
+		let vm = new Vue({
+            // option이나 Component 설정 등.
+			el: '#app', // el : Vue instance가 mount된 요소
+			data: { // data : UI 상태 / 데이터
+				message: 'Hello, World'
+            }
+            // template : 화면에 표시할 요소(HTML, CSS 등)
+            // methods : 화면의 동작과 event logic을 제어하는 method
+            // created : Vue의 Lifecycle과 관련된 속성
+            // watch : data에서 정의한 속성이 변화했을 때 추가동작을 수행할 수 있게 정의하는 속성
+            // filters : data를 문자열로 formatting
+            // computed : data로부터 파생되는 값, 산출속성
+        })
+        
+        // vm.$mount('#app');
+        /*
+        Method를 이용한 mount
+        el Property를 정의하지 않고 $mount method 사용
+        Vue instance를 생성한 후 언제든지 instance를 mount 가능.
+        */
+    </script>
+</body>
+</html>

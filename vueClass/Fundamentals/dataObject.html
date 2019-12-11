@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <script src="product.js"></script>
+</head>
+<body>
+	<div id="app">
+        <p>{{ msg }}</p>
+
+        <p>{{ items[0].name }}</p>
+	</div>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+                msg: 'Hello, Vue.js!!!',
+                items: items
+			}
+        })
+
+        /*
+        data Property의 값은 UI의 상태가 되는 data 객체다.
+        data Property의 값이 변경될 때마다 Vue.js가 이를 자동으로 탐지해
+        표시 내용이 바뀌는 등의 처리 수행.
+
+        Vue instnace를 생성할 때 data property를 전달하고 이를 이용해서 
+        template의 내용을 출력하는 것이 Vue.js로 화면의 내용을 출력하는 기본방법.
+        
+        data property는 객체 혹은 함수를 값으로 가질 수 있다.
+        */
+	</script>
+</body>
+</html>

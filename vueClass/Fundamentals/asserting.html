@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">{{ message }}</div>
+
+	<script>
+        // Loading 및 Vue가 전역 변수로 정의됐는지 확인하기
+        console.assert(typeof Vue !== 'undefined');
+        
+        let options = {
+            el: '#app',
+            data: {
+                message: 'Hello, Vue.js!!!'
+            }
+        }
+        new Vue(options);
+	</script>
+</body>
+</html>
